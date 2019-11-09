@@ -25,7 +25,7 @@ class TodosController < ApplicationController
 
   # DELETE /todos/:id
   def destroy
-    @todo.destroy
+    Todo.delete_all
     head :no_content
   end
 
