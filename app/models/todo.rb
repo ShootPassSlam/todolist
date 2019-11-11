@@ -1,6 +1,6 @@
 class Todo < ApplicationRecord
   def url
-    "https://todolistrailsdss.herokuapp.com/#{id}"
+    "http://todolistrailsdss.herokuapp.com/#{id}"
   end
 
   def serializable_hash config
