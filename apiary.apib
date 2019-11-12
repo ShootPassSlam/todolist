@@ -5,9 +5,29 @@ HOST: http://polls.apiblueprint.org/
 
 Todo is an API allowing users to create todos, delete them, and mark them as complete.
 
--todos
+##todos
     -title
     -created_at
     -updated_at
     -completed
     -order
+
+# Group Todo
+
+## Todo Collection [/todos]
+
+### Retrieve All [GET]
+
+- Response 200 (application/json)
+
+    - Attributes (array[Todo])
+
+### Create a Todo [POST]
+
+- Request (application/json)
+
+    - Attributes (Todo Create)
+
+- Response 201 (application/json)
+
+    - Attributes (Todo Full)
