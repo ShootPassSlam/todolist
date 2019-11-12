@@ -3,31 +3,89 @@ HOST: http://polls.apiblueprint.org/
 
 # todolistdss
 
-Todo is an API allowing users to create todos, delete them, and mark them as complete.
+# Group Todos
 
-##todos
-    -title
-    -created_at
-    -updated_at
-    -completed
-    -order
+Todos operations.
 
-# Group Todo
+## Creation of todo
 
-## Todo Collection [/todos]
++ Attributes (object)
 
-### Retrieve All [GET]
+  + title - Todo Title
+  + completed - Boolean if the todo is completed
+  + order - The todos order in the list
 
-- Response 200 (application/json)
+### Add a car [POST]
 
-    - Attributes (array[Todo])
++ Request Creating a car (application/json)
 
-### Create a Todo [POST]
+    + Headers
 
-- Request (application/json)
+            Accept: application/json
 
-    - Attributes (Todo Create)
+    + Body
 
-- Response 201 (application/json)
+            {
+              "todo": {
+                "title": "First Todo",
+                "completed": false,
+                "order": 0
+              }
+            }
 
-    - Attributes (Todo Full)
++ Response 201 (application/json)
+
+    + Headers
+
+    + Body
+
+            {
+                "id": 1,
+                "title": "First Todo",
+                "completed": false,
+                "order": 0
+            }
+
++ Request Fails when missing params (application/json)
+
+    + Headers
+
+            Accept: application/json
+
+    + Body
+
+            {
+              "todo": {
+                "title": "First Todo",
+                "completed": false,
+                "order": 0
+              }
+            }
+
++ Response 400 (application/json)
+
+    + Headers
+
+    + Body
+
+            {
+              "brand": [
+                "can't be blank"
+              ]
+            }
+
+## Single Todo [/{id}]
+
++ Parameters
+
+  + id: 1 (required, string) - Car id
+
+### Deletes a specific car [DELETE]
+
++ Request Deleting a car (application/json)
+
+    + Headers
+
+            Accept: application/json
+
++ Response 204 ()
