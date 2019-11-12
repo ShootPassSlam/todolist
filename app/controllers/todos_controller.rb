@@ -18,7 +18,9 @@ class TodosController < ApplicationController
   end
 
   def update
-    json_response(Todo.update(params[:id], todo_params),:no_content)
+    # json_response(Todo.update(params[:id], todo_params),:no_content)
+    Todo.update(params[:id], todo_params)
+    head :no_content
   end
 
   def destroy
