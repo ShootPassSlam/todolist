@@ -88,11 +88,11 @@ RSpec.describe 'Todos API', type: :request do
       before { put "/#{todo_id}", params: valid_attributes }
 
       it 'updates the record' do
-        expect(response.body).to be_empty
+        expect(json['title']).to eq('Shopping')
       end
 
-      it 'returns status code 204' do
-        expect(response).to have_http_status(204)
+      it 'returns status code 200' do
+        expect(response).to have_http_status(200)
       end
     end
   end
