@@ -3,9 +3,9 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+- Ruby version 2.6.0
 
-* Ruby version
+Things you may want to cover:
 
 * System dependencies
 
@@ -20,8 +20,6 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* ...
 
 # todolist
 A todo list API in rails
