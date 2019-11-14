@@ -1,10 +1,13 @@
 class TodosController < ApplicationController
   def index
-    json_response(Todo.all)
+    # get current user todos
+    @todos = current_user.todos
+    json_response(@todos)
   end
 
   def create
-    @todo = Todo.create!(todo_params)
+    # create todos belonging to current user
+    @todo = current_user.todos.create!(todo_params)
     json_response(@todo, :created)
   end
 
